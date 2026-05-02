@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kim Cúc &amp; Văn Lâm — Thiệp cưới</title>
+    <meta
+      name="description"
+      content="Trân trọng kính mời — Lễ thành hôn Phan Thị Kim Cúc &amp; Phạm Văn Lâm, 07.06.2026"
+    />
+    <link rel="preload" as="image" href="../imgs/2525_01.jpg" />
+    <link rel="preload" as="image" href="images/ban-do-tiec.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="page-ornaments" aria-hidden="true">
+      <svg class="orn-flower orn-flower--1" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="rgba(190,18,60,0.28)" stroke-width="1.3" stroke-linecap="round">
+          <path d="M60 145V75" />
+          <path d="M60 95c-22-8-38-28-32-48 6-22 32-18 32 4 0-22 26-26 32-4 6 20-10 40-32 48" />
+          <path d="M48 118c-12 10-24 8-30-6M72 118c12 10 24 8 30-6" />
+        </g>
+      </svg>
+      <svg class="orn-flower orn-flower--2" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="rgba(244,114,182,0.35)" stroke-width="1.2" stroke-linecap="round">
+          <path d="M60 145V80" />
+          <ellipse cx="52" cy="52" rx="20" ry="28" transform="rotate(-18 52 52)" />
+          <ellipse cx="68" cy="52" rx="20" ry="28" transform="rotate(18 68 52)" />
+        </g>
+      </svg>
+      <svg class="orn-flower orn-flower--3" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(190,18,60,0.2)" stroke-width="1.1" d="M50 120V60M50 75c-16-20-28-32-24-48s24-12 24 8 0-28 24-8-8 28-24 48" />
+      </svg>
+      <svg class="orn-bird orn-bird--1" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(61,44,41,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M8 35 Q35 8 65 22 Q90 10 112 28 M65 22 Q78 32 95 38" />
+      </svg>
+      <svg class="orn-bird orn-bird--2" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(190,18,60,0.3)" stroke-width="1.3" stroke-linecap="round" d="M5 30 Q40 5 70 18 Q95 8 115 22" />
+      </svg>
+      <svg class="orn-phoenix" viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(185,28,28,0.32)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M20 90 Q60 40 120 55 Q160 20 200 45 Q240 30 260 50 M120 55 Q100 100 40 120 Q80 95 95 70 Q130 85 160 75 Q200 95 230 85" />
+        <path fill="none" stroke="rgba(244,114,182,0.25)" stroke-width="1" d="M200 45 Q220 65 245 75" />
+      </svg>
+      <svg class="orn-dragon" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(61,44,41,0.28)" stroke-width="1.35" stroke-linecap="round" d="M10 55 Q50 20 100 40 T180 35 T260 50 T310 30 M100 40 Q130 70 160 55 T220 60" />
+      </svg>
+      <svg class="orn-bird orn-bird--3" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(244,114,182,0.4)" stroke-width="1.2" stroke-linecap="round" d="M4 28 Q28 6 52 16 Q72 4 96 18" />
+      </svg>
+      <svg class="orn-bird orn-bird--4" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="rgba(61,44,41,0.28)" stroke-width="1.1" stroke-linecap="round" d="M96 26 Q70 8 48 18 Q24 10 4 22" />
+      </svg>
+      <div class="falling-petals">
+        <span class="fall-petal" style="--x: 6%; --d: 0s; --t: 11s"></span>
+        <span class="fall-petal" style="--x: 14%; --d: 2s; --t: 14s"></span>
+        <span class="fall-petal" style="--x: 22%; --d: 4s; --t: 12s"></span>
+        <span class="fall-petal" style="--x: 31%; --d: 1s; --t: 16s"></span>
+        <span class="fall-petal" style="--x: 38%; --d: 5s; --t: 13s"></span>
+        <span class="fall-petal" style="--x: 46%; --d: 3s; --t: 15s"></span>
+        <span class="fall-petal" style="--x: 54%; --d: 6s; --t: 11s"></span>
+        <span class="fall-petal" style="--x: 62%; --d: 0.5s; --t: 14s"></span>
+        <span class="fall-petal" style="--x: 70%; --d: 4.5s; --t: 12s"></span>
+        <span class="fall-petal" style="--x: 78%; --d: 2.5s; --t: 17s"></span>
+        <span class="fall-petal" style="--x: 86%; --d: 7s; --t: 13s"></span>
+        <span class="fall-petal" style="--x: 93%; --d: 1.5s; --t: 15s"></span>
+        <span class="fall-petal fall-petal--sm" style="--x: 18%; --d: 8s; --t: 18s"></span>
+        <span class="fall-petal fall-petal--sm" style="--x: 58%; --d: 9s; --t: 19s"></span>
+        <span class="fall-petal fall-petal--sm" style="--x: 82%; --d: 3.5s; --t: 16s"></span>
+      </div>
+    </div>
+
+    <div class="page-content">
+    <nav class="nav" id="nav" aria-label="Mục lục thiệp cưới">
+      <a href="#dau-trang" class="nav__brand" data-section="dau-trang">C · L</a>
+      <div class="nav__links">
+        <a href="#gioi-thieu" class="nav__link" data-section="gioi-thieu">Lời mở đầu</a>
+        <a href="#ngay-cuoi" class="nav__link" data-section="ngay-cuoi">Ngày cưới</a>
+        <a href="#co-dau" class="nav__link" data-section="co-dau">Cô dâu</a>
+        <a href="#chu-re" class="nav__link" data-section="chu-re">Chú rể</a>
+        <a href="#gia-dinh" class="nav__link" data-section="gia-dinh">Gia đình</a>
+        <a href="#su-kien" class="nav__link" data-section="su-kien">Lễ &amp; tiệc</a>
+        <a href="#album" class="nav__link" data-section="album">Khoảnh khắc</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="dau-trang">
+      <div class="hero__media">
+        <img
+          src="../imgs/2525_01.jpg"
+          alt="Thiệp cưới — Kim Cúc &amp; Văn Lâm"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <p class="hero__watermark" aria-hidden="true">07.06 · 2026</p>
+      <div class="hero__tulips hero__tulips--corner reveal">
+        <svg class="tulip-svg" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path class="tulip-line" d="M60 198V85" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path class="tulip-line" d="M60 120c-18-22-32-38-28-58 4-22 28-18 28 2 0-20 24-24 28-2 4 20-10 36-28 58z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+          <path class="tulip-line" d="M42 155c-12 8-22 6-28-4M78 155c12 8 22 6 28-4" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="hero__content">
+        <p class="hero__save-tag">Save the date</p>
+        <p class="hero__eyebrow">Trân trọng kính mời</p>
+        <p class="hero__guest">Quý khách</p>
+        <h1 class="hero__title hero__title--script">
+          Kim Cúc
+          <span class="hero__heart" aria-hidden="true">♡</span>
+          Văn Lâm
+        </h1>
+        <p class="hero__date">Chủ nhật · 7 tháng 6 năm 2026</p>
+      </div>
+      <a href="#gioi-thieu" class="hero__scroll">
+        <span>Mở thiệp</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </header>
+
+    <section id="gioi-thieu" class="quote-band">
+      <blockquote class="reveal">
+        Như cánh hoa nở đúng mùa, duyên ta cũng đến đúng lúc trời đất mở lối — để
+        hai mái nhà gặp nhau trong một lời hứa dài lâu.
+      </blockquote>
+      <cite class="reveal reveal-delay-1">— Hôn lễ của chúng mình —</cite>
+    </section>
+
+    <section class="section section--calendar" id="ngay-cuoi">
+      <div class="section__inner section__inner--calendar">
+        <div class="calendar-ambient" aria-hidden="true">
+          <span class="cal-float cal-float--1"></span>
+          <span class="cal-float cal-float--2"></span>
+          <span class="cal-float cal-float--3"></span>
+          <svg class="cal-mini-bird" viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" stroke="rgba(190,18,60,0.22)" stroke-width="1" d="M2 22 Q25 6 45 14 Q62 4 78 12" />
+          </svg>
+          <svg class="cal-mini-bird cal-mini-bird--2" viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" stroke="rgba(244,114,182,0.28)" stroke-width="1" d="M78 18 Q55 5 35 12 Q15 4 2 14" />
+          </svg>
+        </div>
+        <div class="deco-tulips deco-tulips--left reveal" aria-hidden="true">
+          <svg class="tulip-svg tulip-svg--wide" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <path class="tulip-line" fill="none" stroke="currentColor" stroke-width="1" d="M20 100c30-40 55-65 90-70M100 30c15 18 28 40 35 68M140 95c25-15 45-20 55-8"/>
+          </svg>
+        </div>
+        <p class="section__label reveal">Thời khắc ngọt ngào</p>
+        <h2 class="section__heading reveal reveal-delay-1">
+          Ghi nhớ ngày vu quy — mùng bảy, tháng sáu
+        </h2>
+        <p class="section__lead reveal reveal-delay-2">
+          Từng giây phút chờ mong đều lấp lánh như ánh nến — mời bạn cùng đếm ngược với
+          chúng mình, đến khoảnh khắc hai đứa chính thức về chung một nhịp cầu.
+        </p>
+        <div class="calendar-countdown reveal reveal-delay-3">
+          <div class="wedding-cal-wrap">
+            <div class="wedding-cal" id="wedding-cal" aria-label="Lịch tháng 6 năm 2026"></div>
+          </div>
+          <div class="countdown-block countdown-block--lux">
+            <div class="countdown-block__corners" aria-hidden="true"></div>
+            <p class="countdown-block__kicker">Đếm ngược khoảnh khắc</p>
+            <p class="countdown-block__intro">
+              Từng nhịp thời gian như khẽ gom những ngày tháng mong chờ — chỉ còn
+              <strong>ngày, giờ, phút và giây</strong> nữa thôi, chúng mình sẽ nắm tay nhau
+              bước vào <strong>lễ thành hôn</strong>,<br class="countdown-br" />
+              trước sự chứng kiến của tổ tiên, đôi bên song thân và tất cả tình thương quý báu quanh ta.
+            </p>
+            <div class="countdown countdown--pretty" id="countdown" aria-live="polite">
+              <div class="countdown__unit">
+                <span class="countdown__ring" aria-hidden="true"></span>
+                <span class="countdown__num" id="cd-days">—</span>
+                <span class="countdown__lbl">Ngày</span>
+              </div>
+              <div class="countdown__unit">
+                <span class="countdown__ring" aria-hidden="true"></span>
+                <span class="countdown__num" id="cd-hours">—</span>
+                <span class="countdown__lbl">Giờ</span>
+              </div>
+              <div class="countdown__unit">
+                <span class="countdown__ring" aria-hidden="true"></span>
+                <span class="countdown__num" id="cd-mins">—</span>
+                <span class="countdown__lbl">Phút</span>
+              </div>
+              <div class="countdown__unit countdown__unit--pulse">
+                <span class="countdown__ring" aria-hidden="true"></span>
+                <span class="countdown__num" id="cd-secs">—</span>
+                <span class="countdown__lbl">Giây</span>
+              </div>
+            </div>
+            <div class="countdown-block__ribbon" aria-hidden="true">
+              <span>♥</span>
+            </div>
+            <p class="countdown-block__target" id="countdown-msg">
+              <span class="countdown-block__target-icon" aria-hidden="true">⏐</span>
+              Đồng hồ đang dịu dàng đếm về <strong>09 giờ</strong>, Chủ nhật <strong>07.06.2026</strong>
+              — giờ làm lễ tại tư gia (giờ Việt Nam).<br />
+              Tiệc mừng lúc <strong>11 giờ</strong> cùng ngày.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="co-dau">
+      <div class="section__inner">
+        <p class="section__label reveal">Cô dâu</p>
+        <div class="split">
+          <div class="split__visual reveal">
+            <div class="split__ornament split__ornament--tl" aria-hidden="true"></div>
+            <div class="split__ornament split__ornament--br" aria-hidden="true"></div>
+            <div class="split__frame">
+              <img
+                src="../imgs/3I8A7913.jpg"
+                alt="Phan Thị Kim Cúc"
+                width="1200"
+                height="1600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="split__copy reveal-children">
+            <h2 class="split__name split__name--script">Phan Thị Kim Cúc</h2>
+            <p class="split__role">Trưởng nữ</p>
+            <p class="section__text">
+              Con gái của <strong>ông Phan Mạnh Tường</strong> và <strong>bà Trần Thị Châu</strong> —
+              thôn 13, xã Cát Tiên, tỉnh Lâm Đồng.
+            </p>
+            <p class="section__text">
+              Được nuôi dưỡng trong vòng tay yêu thương của gia đình, Cúc trân trọng
+              từng khoảnh khắc và hạnh phúc khi được cùng Văn Lâm viết tiếp câu chuyện đời mình.
+            </p>
+          </div>
+        </div>
+        <p class="mini-quote reveal">
+          “Tình yêu đẹp nhất là khi hai trái tim chọn cùng một nhịp — dịu dàng mà kiên định.”
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="chu-re">
+      <div class="section__inner">
+        <p class="section__label reveal">Chú rể</p>
+        <div class="split split--reverse">
+          <div class="split__visual reveal">
+            <div class="split__ornament split__ornament--tl" aria-hidden="true"></div>
+            <div class="split__ornament split__ornament--br" aria-hidden="true"></div>
+            <div class="split__frame">
+              <img
+                src="../imgs/3I8A8041.jpg"
+                alt="Phạm Văn Lâm"
+                width="1200"
+                height="1600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="split__copy reveal-children">
+            <h2 class="split__name split__name--script">Phạm Văn Lâm</h2>
+            <p class="split__role">Út nam</p>
+            <p class="section__text">
+              Con trai của <strong>ông Phạm Văn Uyên</strong> và <strong>bà Nguyễn Thị Nhàn</strong> —
+              Thôn Phúc Kiều, xã Hòa Trạch, tỉnh Quảng Trị.
+            </p>
+            <p class="section__text">
+              Lâm mang trong mình lòng biết ơn đối với tổ tiên và song thân — và niềm vinh hạnh
+              khi được cùng Kim Cúc dựng xây một mái ấm mới.
+            </p>
+          </div>
+        </div>
+        <p class="mini-quote mini-quote--accent reveal">
+          Hai ta không chỉ chọn nhau một lần — mà chọn nhau mỗi ngày, trong bình yên lẫn sóng gió.
+        </p>
+      </div>
+    </section>
+
+    <section class="section families" id="gia-dinh">
+      <div class="section__inner">
+        <p class="section__label reveal">Hai họ thông gia</p>
+        <h2 class="section__heading reveal reveal-delay-1">
+          Trân trọng báo tin lễ thành hôn của con chúng tôi
+        </h2>
+        <p class="section__sub reveal reveal-delay-2">
+          Kính mời quý ông, bà, anh, chị và các bạn thân tới dự buổi lễ vu quy &amp; tiệc mừng,
+          chung vui cùng hai gia đình trong niềm hân hoan trọn vẹn.
+        </p>
+        <div class="family-grid">
+          <article class="family-card reveal">
+            <p class="family-card__side">Nhà gái</p>
+            <h3>Họ Phan</h3>
+            <ul class="family-list">
+              <li>
+                <strong>Ông Phan Mạnh Tường</strong>
+                Thân sinh phụ
+              </li>
+              <li>
+                <strong>Bà Trần Thị Châu</strong>
+                Thân sinh mẫu
+              </li>
+              <li>
+                <strong>Địa chỉ</strong>
+                Thôn 13, xã Cát Tiên, tỉnh Lâm Đồng
+              </li>
+            </ul>
+          </article>
+          <article class="family-card reveal reveal-delay-1">
+            <p class="family-card__side">Nhà trai</p>
+            <h3>Họ Phạm</h3>
+            <ul class="family-list">
+              <li>
+                <strong>Ông Phạm Văn Uyên</strong>
+                Thân sinh phụ
+              </li>
+              <li>
+                <strong>Bà Nguyễn Thị Nhàn</strong>
+                Thân sinh mẫu
+              </li>
+              <li>
+                <strong>Địa chỉ</strong>
+                Thôn Phúc Kiều, xã Hòa Trạch, tỉnh Quảng Trị
+              </li>
+            </ul>
+          </article>
+        </div>
+        <p class="mini-quote reveal">
+          Sự hiện diện của quý khách là niềm vinh hạnh cho đôi bên gia đình — dù bận rộn,
+          xin hãy ghé chút thôi để chứng kiến khoảnh khắc đôi uyên ương vu quy.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--events" id="su-kien">
+      <div class="section__inner">
+        <p class="section__label reveal">Lễ &amp; tiệc mừng</p>
+        <h2 class="section__heading reveal reveal-delay-1">
+          Welcome to our wedding
+        </h2>
+        <div class="event-cards">
+          <article class="event-card event-card--ceremony reveal reveal-delay-2">
+            <div class="event-card__arch">Lễ vu quy</div>
+            <p class="event-card__time">09:00</p>
+            <h3 class="event-card__title">Chủ nhật, 07 · 06 · 2026</h3>
+            <p class="event-card__body">
+              <strong>Tư gia</strong> — làm lễ thành hôn theo nghi thức truyền thống.<br />
+              <em>Âm lịch:</em> Nhằm ngày 22 tháng 04 năm Bính Ngọ.
+            </p>
+          </article>
+          <article class="event-card event-card--party reveal reveal-delay-3">
+            <div class="event-card__arch event-card__arch--pink">Tiệc mừng</div>
+            <p class="event-card__time">11:00</p>
+            <h3 class="event-card__title">Cúc &amp; Lâm</h3>
+            <p class="event-card__body">
+              Trân trọng kính mời quý khách tới dự <strong>buổi tiệc chung vui</strong> cùng gia đình
+              chúng tôi tại <strong>khuôn viên Trường Tiểu học Đinh Bộ Lĩnh</strong>, ấp Bắc Hòa,
+              xã Bình Minh, tỉnh Đồng Nai.
+            </p>
+            <p class="event-card__foot">
+              Vào lúc <strong>11 giờ 00</strong>, Chủ nhật — <strong>07.06.2026</strong>
+            </p>
+          </article>
+        </div>
+        <div class="details details--maprow reveal">
+          <p class="details__map-heading">Sơ đồ chỉ đường · địa điểm dự tiệc</p>
+          <a
+            class="map-card"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Tr%C6%B0%E1%BB%9Dng+Ti%E1%BB%83u+h%E1%BB%8Dc+%C4%90inh+B%E1%BB%99+L%C4%A9nh+B%C3%ACnh+Minh+%C4%90%E1%BB%93ng+Nai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="map-card__shine" aria-hidden="true"></span>
+            <span class="map-card__ribbon" aria-hidden="true">Chạm để mở Google Maps</span>
+            <div class="map-card__frame">
+              <img
+                class="map-card__img"
+                src="images/ban-do-tiec.png"
+                alt="Sơ đồ: QL1A, nhà thờ Bắc Hòa, Trường Tiểu học Đinh Bộ Lĩnh — chạm để mở chỉ đường Google Maps"
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <span class="map-card__hint">
+              <span class="map-card__pin" aria-hidden="true"></span>
+              Mở bản đồ thật trên điện thoại — tiện chỉ đường tới khuôn viên trường
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="album">
+      <div class="section__inner">
+        <p class="section__label reveal">Khoảnh khắc</p>
+        <h2 class="section__heading reveal reveal-delay-1">Những sắc màu yêu thương</h2>
+        <div class="gallery">
+          <div class="gallery__item gallery__item--wide reveal">
+            <img
+              src="../imgs/2525_04.jpg"
+              alt="Khoảnh khắc 1"
+              width="1600"
+              height="800"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal reveal-delay-1">
+            <img
+              src="../imgs/2525_05.jpg"
+              alt="Khoảnh khắc 2"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal reveal-delay-2">
+            <img
+              src="../imgs/3I8A8064.jpg"
+              alt="Khoảnh khắc 3"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal">
+            <img
+              src="../imgs/2525_02.jpg"
+              alt="Khoảnh khắc 4"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal reveal-delay-1">
+            <img
+              src="../imgs/3I8A8232.jpg"
+              alt="Khoảnh khắc 5"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal reveal-delay-1">
+            <img
+              src="../imgs/3I8A8271.jpg"
+              alt="Khoảnh khắc 5"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery__item reveal reveal-delay-1">
+            <img
+              src="../imgs/2525_03.jpg"
+              alt="Khoảnh khắc 5"
+              width="1000"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="chan-trang">
+      <div class="footer__deco" aria-hidden="true">
+        <span class="footer__petal"></span>
+        <span class="footer__petal footer__petal--2"></span>
+        <span class="footer__petal footer__petal--3"></span>
+      </div>
+      <p class="footer__names footer__names--script">Kim Cúc &amp; Văn Lâm</p>
+      <p class="footer__tag">
+        Xin chân thành cảm ơn tình thương và lời chúc phúc của quý khách — hẹn gặp trong ngày vui!
+      </p>
+    </footer>
+    </div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
