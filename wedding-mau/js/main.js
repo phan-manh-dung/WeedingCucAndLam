@@ -6,6 +6,7 @@
   } catch (e) {}
 
   var nav = document.getElementById("nav");
+  var loadingScreen = document.getElementById("loading-screen");
   var prefersReduced =
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -357,6 +358,17 @@
   }
   setupWeddingAudio();
 
+  function hideLoadingScreen() {
+    if (!loadingScreen) return;
+    loadingScreen.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+    window.setTimeout(function () {
+      if (loadingScreen && loadingScreen.parentNode) {
+        loadingScreen.parentNode.removeChild(loadingScreen);
+      }
+    }, 520);
+  }
+
   bindSmoothAnchors();
   bindIntroCancel();
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -370,9 +382,14 @@
     startIntroScroll();
   }
   if (document.readyState === "complete") {
+    hideLoadingScreen();
     bootIntro();
   } else {
-    window.addEventListener("load", bootIntro);
+    window.addEventListener("load", function () {
+      hideLoadingScreen();
+      bootIntro();
+    });
+    window.setTimeout(hideLoadingScreen, 9500);
   }
 
   var revealEls = document.querySelectorAll(".reveal, .reveal-children");

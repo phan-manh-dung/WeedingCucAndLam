@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kim Cúc &amp; Văn Lâm — Thiệp cưới</title>
+    <title>Thiệp cưới - Kim Cúc &amp; Văn Lâm</title>
+    <link rel="icon" type="image/png" href="imgs/icons8-love-32.png" />
     <meta
       name="description"
       content="Trân trọng kính mời — Lễ thành hôn Phan Thị Kim Cúc &amp; Phạm Văn Lâm, 07.06.2026"
@@ -18,10 +19,17 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="is-loading">
     <audio id="wedding-audio" autoplay loop preload="auto" playsinline>
       <source src="music/Westlife -  Beautiful in white (Lyrics) - (320 Kbps).mp3" type="audio/mpeg" />
     </audio>
+    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+      <div class="loading-screen__box">
+        <span class="loading-screen__icon" aria-hidden="true">💌</span>
+        <p class="loading-screen__title">Thiệp đang được mở ra...</p>
+        <p class="loading-screen__text">Bạn đợi tụi mình một chút xíu nhé, điều dễ thương sắp hiện ra rồi nè ♡</p>
+      </div>
+    </div>
     <button class="music-toggle is-playing" id="music-toggle" type="button" aria-label="Tắt nhạc nền">✦ Tắt nhạc</button>
     <div class="grain" aria-hidden="true"></div>
 
@@ -331,10 +339,6 @@
                 decoding="async"
               />
             </div>
-            <span class="map-card__hint">
-              <span class="map-card__pin" aria-hidden="true"></span>
-              Mở bản đồ thật trên điện thoại — tiện chỉ đường tới khuôn viên trường
-            </span>
           </a>
         </div>
       </div>
@@ -409,26 +413,6 @@
             />
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="message-card message-card--greeting">
-      <div class="message-card__inner reveal">
-        <h2 class="message-card__title">Lời ngỏ</h2>
-        <p class="message-card__text">
-          Gặp gỡ, yêu và cưới. Điều bạn vừa nghe không nằm trong một câu chuyện cổ tích, mà là câu chuyện về cuộc đời hai chúng tôi.
-          Chúng tôi sẽ yêu thương, chăm sóc, trân trọng và nắm tay nhau cùng đi đến hết cuộc đời này.
-        </p>
-      </div>
-    </section>
-
-    <section class="message-card message-card--thanks">
-      <div class="message-card__inner reveal">
-        <h2 class="message-card__title">Thank You</h2>
-        <p class="message-card__text">
-          Thật là một niềm vinh hạnh lớn khi ngày hạnh phúc nhất cuộc đời chúng tôi có sự hiện diện và chúc phúc của bạn.
-          Chân thành cảm ơn bạn.
-        </p>
       </div>
     </section>
 
