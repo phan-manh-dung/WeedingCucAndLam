@@ -66,6 +66,7 @@
 
   function startIntroScroll() {
     if (prefersReduced) return;
+    if (window.innerWidth <= 768) return;
     if (window.location.hash && window.location.hash.length > 1) return;
     var to = Math.max(
       0,
@@ -194,21 +195,14 @@
   function buildCalendar() {
     var root = document.getElementById("wedding-cal");
     if (!root) return;
-    var uid = "c" + ((Math.random() * 1e8) | 0);
     var year = 2026;
     var monthIndex = 5;
     var first = new Date(year, monthIndex, 1);
-    var startPad = first.getDay();
+    var startPad = (first.getDay() + 6) % 7;
     var dim = new Date(year, monthIndex + 1, 0).getDate();
-    var wd = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
-    var h = '<div class="wedding-cal-card">';
-    h +=
-      '<div class="wedding-cal-card__watermark" aria-hidden="true"><span class="wm-a">07</span><span class="wm-dot">·</span><span class="wm-b">06</span><span class="wm-y">2026</span></div>';
-    h += '<div class="wedding-cal-card__arch"><div class="wedding-cal-card__arch-inner">';
-    h += '<p class="wedding-cal-card__save-en">Save the date</p>';
-    h +=
-      '<div class="wedding-cal__head">Tháng sáu<span class="wedding-cal__year">Năm 2026</span></div>';
-    h += "</div></div>";
+    var wd = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"];
+    var h = '<div class="wedding-cal-card wedding-cal-card--wide">';
+    h += '<div class="wedding-cal__head">Tháng 6 / 2026</div>';
     h += '<div class="wedding-cal__weekdays">';
     for (var w = 0; w < wd.length; w++) {
       h += "<div>" + wd[w] + "</div>";
@@ -227,30 +221,11 @@
           '<div class="' +
           cls +
           '" role="gridcell">' +
-          '<span class="wed-sparkle" aria-hidden="true">\u2665 \u2665 \u2665</span>' +
-          '<svg class="wed-stamp" viewBox="0 0 100 100" aria-hidden="true">' +
-          "<defs>" +
-          '<radialGradient id="wedGrad' +
-          uid +
-          '" cx="38%" cy="32%" r="68%">' +
-          '<stop offset="0%" stop-color="#fda4af"/>' +
-          '<stop offset="45%" stop-color="#f43f5e"/>' +
-          '<stop offset="100%" stop-color="#9f1239"/>' +
-          "</radialGradient>" +
-          '<pattern id="wedFpat' +
-          uid +
-          '" width="7" height="7" patternUnits="userSpaceOnUse">' +
-          '<circle cx="1.8" cy="2" r="0.55" fill="rgba(255,255,255,0.16)"/>' +
-          '<circle cx="5.2" cy="4.5" r="0.45" fill="rgba(255,255,255,0.1)"/>' +
-          "</pattern>" +
-          "</defs>" +
-          '<path fill="url(#wedGrad' +
-          uid +
-          ')" d="M50,86 C18,56 10,38 22,24 C32,14 44,20 50,28 C56,20 68,14 78,24 C90,38 82,56 50,86z"/>' +
-          '<path fill="url(#wedFpat' +
-          uid +
-          ')" opacity="0.55" d="M50,86 C18,56 10,38 22,24 C32,14 44,20 50,28 C56,20 68,14 78,24 C90,38 82,56 50,86z"/>' +
-          "</svg>" +
+          '<span class="wed-halo" aria-hidden="true"></span>' +
+          '<span class="wed-mark" aria-hidden="true">❤</span>' +
+          '<span class="wed-orbit wed-orbit--1" aria-hidden="true">♥</span>' +
+          '<span class="wed-orbit wed-orbit--2" aria-hidden="true">♥</span>' +
+          '<span class="wed-orbit wed-orbit--3" aria-hidden="true">♥</span>' +
           '<span class="wedding-cal__num">' +
           d +
           "</span></div>";
@@ -320,6 +295,67 @@
   buildCalendar();
   tickCountdown();
   setInterval(tickCountdown, 1000);
+
+  function setupWeddingAudio() {
+    var audio = document.getElementById("wedding-audio");
+    var toggle = document.getElementById("music-toggle");
+    if (!audio) return;
+    audio.volume = 0.55;
+    audio.muted = false;
+
+    function tryPlay() {
+      var p = audio.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(function () {
+          updateToggle();
+        });
+      }
+    }
+
+    function updateToggle() {
+      if (!toggle) return;
+      var playing = !audio.paused;
+      toggle.textContent = playing ? "✦ Tắt nhạc" : "♪ Bật nhạc";
+      toggle.classList.toggle("is-playing", playing);
+      toggle.setAttribute("aria-label", playing ? "Tắt nhạc nền" : "Bật nhạc nền");
+    }
+
+    tryPlay();
+    updateToggle();
+
+    var unlock = function () {
+      if (audio.paused) tryPlay();
+      updateToggle();
+      document.removeEventListener("click", unlock);
+      document.removeEventListener("touchstart", unlock);
+      document.removeEventListener("keydown", unlock);
+    };
+    document.addEventListener("click", unlock, { passive: true });
+    document.addEventListener("touchstart", unlock, { passive: true });
+    document.addEventListener("keydown", unlock);
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        if (audio.paused) {
+          tryPlay();
+        } else {
+          audio.pause();
+        }
+        updateToggle();
+      });
+    }
+
+    audio.addEventListener("play", updateToggle);
+    audio.addEventListener("pause", updateToggle);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && audio.paused) {
+        tryPlay();
+      }
+      updateToggle();
+    });
+  }
+  setupWeddingAudio();
 
   bindSmoothAnchors();
   bindIntroCancel();
