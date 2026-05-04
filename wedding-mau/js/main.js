@@ -358,6 +358,31 @@
   }
   setupWeddingAudio();
 
+  function applyInviteVariant() {
+    var params = new URLSearchParams(window.location.search);
+    var side = (params.get("side") || "").toLowerCase();
+    var groomFirst = side === "nhatrai" || side === "groom" || side === "trai";
+    if (!groomFirst) return;
+
+    var heroNames = document.querySelectorAll(".hero__line");
+    if (heroNames.length >= 2) {
+      heroNames[0].textContent = "Văn Lâm";
+      heroNames[1].textContent = "Kim Cúc";
+    }
+
+    var footerNames = document.querySelectorAll(".footer__line");
+    if (footerNames.length >= 2) {
+      footerNames[0].textContent = "Văn Lâm";
+      footerNames[1].textContent = "Kim Cúc";
+    }
+
+    var titleEl = document.querySelector("title");
+    if (titleEl) {
+      titleEl.textContent = "Thiệp cưới - Văn Lâm & Kim Cúc";
+    }
+  }
+  applyInviteVariant();
+
   function hideLoadingScreen() {
     if (!loadingScreen) return;
     loadingScreen.classList.add("is-hidden");
