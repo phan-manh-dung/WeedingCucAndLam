@@ -153,32 +153,45 @@
     else nav.classList.remove("nav--solid");
   }
 
-  var sectionOrder = [
-    "dau-trang",
-    "gioi-thieu",
-    "ngay-cuoi",
-    "co-dau",
-    "chu-re",
-    "gia-dinh",
-    "su-kien",
-    "album",
-  ];
+  var sectionOrder = Array.prototype.slice
+    .call(document.querySelectorAll("[data-section]"))
+    .map(function (link) {
+      return link.getAttribute("data-section");
+    })
+    .filter(function (id, idx, arr) {
+      return id && arr.indexOf(id) === idx;
+    });
+
+  if (!sectionOrder.length) {
+    sectionOrder = ["dau-trang", "gioi-thieu", "ngay-cuoi", "co-dau", "chu-re", "su-kien", "album"];
+  }
+
+  var navSections = sectionOrder
+    .map(function (id) {
+      return { id: id, el: document.getElementById(id) };
+    })
+    .filter(function (item) {
+      return !!item.el;
+    });
 
   function updateActiveNavLink() {
-    var links = document.querySelectorAll("[data-section]");
-    if (!links.length) return;
-    var y = window.scrollY + navOffset() + 24;
-    var current = sectionOrder[0];
-    for (var i = 0; i < sectionOrder.length; i++) {
-      var el = document.getElementById(sectionOrder[i]);
-      if (el && el.offsetTop <= y) {
-        current = sectionOrder[i];
+    var links = Array.prototype.slice.call(document.querySelectorAll("[data-section]"));
+    if (!links.length || !navSections.length) return;
+    var threshold = navOffset() + 24;
+    var current = navSections[0].id;
+
+    for (var i = 0; i < navSections.length; i++) {
+      var top = navSections[i].el.getBoundingClientRect().top;
+      if (top <= threshold) {
+        current = navSections[i].id;
       }
     }
-    links.forEach(function (link) {
+
+    for (var j = 0; j < links.length; j++) {
+      var link = links[j];
       var sec = link.getAttribute("data-section");
       link.classList.toggle("is-active", sec === current);
-    });
+    }
   }
 
   var scrollTicking = false;

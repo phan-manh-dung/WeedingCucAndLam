@@ -2247,6 +2247,71 @@ a:hover {
   line-height: 1.3;
 }
 
+/* ===== Story section ===== */
+.section--story {
+  background: linear-gradient(180deg, #fff7fa 0%, #fdeef4 100%);
+  border-top: 1px solid rgba(253, 164, 175, 0.22);
+  border-bottom: 1px solid rgba(253, 164, 175, 0.22);
+}
+
+.story-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.4rem);
+  margin-top: clamp(1.2rem, 4vw, 1.9rem);
+}
+
+@media (min-width: 860px) {
+  .story-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.story-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(253, 164, 175, 0.3);
+  border-radius: 1rem;
+  padding: clamp(1.2rem, 3vw, 1.6rem);
+  box-shadow: 0 0.8rem 2rem rgba(190, 24, 60, 0.07);
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 8% 10%,
+    rgba(251, 207, 232, 0.28),
+    transparent 42%
+  );
+  pointer-events: none;
+}
+
+.story-card__kicker {
+  margin: 0 0 0.45rem;
+  font-size: 0.67rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #be123c;
+  font-weight: 700;
+}
+
+.story-card__title {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.2vw, 1.7rem);
+  color: #4b322f;
+  line-height: 1.25;
+}
+
+.story-card__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.94rem, 2.2vw, 1rem);
+  line-height: 1.75;
+}
+
 /* ===== Lời ngỏ + Thank You ===== */
 .message-card {
   position: relative;
@@ -2284,8 +2349,10 @@ a:hover {
 }
 
 .message-card--thanks::before {
-  background-image: url("../imgs/2525_06.jpg");
+  background-image: url("../imgs/2525_08.jpg");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .message-card__inner {
