@@ -2346,6 +2346,9 @@ a:hover {
 
 .message-card--greeting::before {
   background-image: url("../imgs/2525_09.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .message-card--thanks::before {
@@ -2353,6 +2356,10 @@ a:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.message-card + .message-card {
+  margin-top: clamp(0.9rem, 2.6vw, 1.35rem);
 }
 
 .message-card__inner {
@@ -2883,6 +2890,35 @@ a:hover {
 
 .gallery__item:hover img {
   transform: scale(1.06);
+}
+
+.album-portraits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 0 1.2rem;
+}
+
+@media (min-width: 900px) {
+  .album-portraits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 1.45rem;
+  }
+}
+
+.album-portraits__item {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: 1px solid rgba(253, 164, 175, 0.28);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0.55rem 1.25rem rgba(190, 24, 60, 0.08);
+}
+
+.album-portraits__item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===== Footer ===== */
